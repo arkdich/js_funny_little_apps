@@ -1,0 +1,112 @@
+@import url("https://fonts.googleapis.com/css2?family=Muli");
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: "Muli", sans-serif;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  min-height: 100vh;
+  background: steelblue;
+}
+
+.form-wrapper {
+  margin: 10px;
+  padding: 35px;
+  background: rgba(0, 0, 0, 0.4);
+  color: #fff;
+  border-radius: 5px;
+}
+
+.form-wrapper h1 {
+  font-size: 32px;
+  text-align: center;
+}
+
+.form-wrapper .form-entry {
+  position: relative;
+  margin: 50px 0px;
+  width: 100%;
+}
+
+.form-wrapper .form-entry label {
+  position: absolute;
+  top: 10px;
+  left: 0px;
+  display: block;
+  font-size: 18px;
+  z-index: 1;
+}
+
+.form-wrapper .form-entry label span {
+  display: inline-block;
+  -webkit-transition: 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  transition: 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.form-wrapper .form-entry input {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid #fff;
+  outline: none;
+  padding: 10px 0px;
+  font-size: 18px;
+  color: #fff;
+  -webkit-transition: border-color 0.3s linear;
+  transition: border-color 0.3s linear;
+}
+
+.form-wrapper .form-entry input:valid, .form-wrapper .form-entry input:focus {
+  border-bottom-color: lightblue;
+}
+
+.form-wrapper .form-entry input:valid + label span,
+.form-wrapper .form-entry input:focus + label span {
+  -webkit-transform: translateY(-30px);
+          transform: translateY(-30px);
+  color: lightblue;
+}
+
+.form-wrapper p {
+  margin-top: 25px;
+  text-align: center;
+}
+
+.form-wrapper a {
+  text-decoration: none;
+  color: lightblue;
+}
+
+.btn {
+  display: block;
+  color: #000 !important;
+  background: lightblue;
+  border-radius: 5px;
+  padding: 15px 35px;
+  text-decoration: none;
+  text-align: center;
+}
+
+.btn:active {
+  -webkit-transform: scale(0.99);
+          transform: scale(0.99);
+}
+/*# sourceMappingURL=style.css.map */

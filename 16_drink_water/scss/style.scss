@@ -1,0 +1,161 @@
+@import url("https://fonts.googleapis.com/css2?family=Mulish:wght@200;300;400;500;600;700;800&display=swap");
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: "Mulish", sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-color: #3494e4;
+  color: #fff;
+  text-align: center;
+}
+
+h2 {
+  font-size: 1.2rem;
+  font-weight: 400;
+}
+
+p {
+  display: block;
+  margin: 15px;
+  font-size: 1.2rem;
+  font-weight: 300;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .goal-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 15px 0px;
+
+    input {
+      margin-left: 10px;
+      width: 30px;
+      height: 30px;
+      border: none;
+      border-radius: 5px;
+      outline: none;
+      font-size: 1.1rem;
+      text-align: center;
+      color: #3494e4;
+      box-shadow: 1px 1px 2px 2px rgba($color: #333, $alpha: 0.3);
+    }
+
+    #goal_output {
+      margin-left: 10px;
+      display: none;
+    }
+
+    .goal-change {
+      display: none;
+    }
+
+    button {
+      background: transparent;
+      border: none;
+      outline: none;
+
+      i {
+        font-size: 1.2rem;
+        padding: 10px;
+        cursor: pointer;
+        color: #fff;
+      }
+    }
+  }
+}
+
+.goal-header.filled {
+  input {
+    display: none;
+  }
+
+  #goal_output {
+    display: inline-block;
+  }
+
+  .goal-conf {
+    display: none;
+  }
+
+  .goal-change {
+    display: block;
+  }
+}
+.water {
+  &-cont {
+    height: 320px;
+    width: 150px;
+    background-color: #69b4f1;
+    color: #3494e4;
+    border: 3px solid #1679ca;
+    border-top: none;
+    border-radius: 8px 8px 45px 45px;
+    user-select: none;
+    overflow: hidden;
+  }
+
+  &-empty,
+  &-filled {
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    transition: 0.3s ease-in-out;
+    color: #1679ca;
+    overflow: hidden;
+    line-height: 1;
+  }
+
+  &-empty {
+    height: 100%;
+  }
+
+  &-filled {
+    background-color: #69b4f1;
+    height: 0%;
+    font-size: 1.4rem;
+  }
+}
+
+.glass-cont {
+  max-width: 400px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.water-glass {
+  background-color: #fff;
+  border-width: 2px;
+  cursor: pointer;
+  margin: 10px;
+  height: 80px !important;
+  width: 50px !important;
+  border-radius: 5px 5px 15px 15px;
+  transition: 0.2s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.active {
+  background-color: #69b4f1;
+  color: #fff;
+}

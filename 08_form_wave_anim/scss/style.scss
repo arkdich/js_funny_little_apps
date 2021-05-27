@@ -1,0 +1,99 @@
+@import url("https://fonts.googleapis.com/css2?family=Muli");
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: "Muli", sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: steelblue;
+}
+
+.form-wrapper {
+  margin: 10px;
+  padding: 35px;
+  background: rgba($color: #000000, $alpha: 0.4);
+  color: #fff;
+  border-radius: 5px;
+
+  h1 {
+    font-size: 32px;
+    text-align: center;
+  }
+
+  .form-entry {
+    position: relative;
+    margin: 50px 0px;
+    width: 100%;
+
+    label {
+      position: absolute;
+      top: 10px;
+      left: 0px;
+      display: block;
+      font-size: 18px;
+      z-index: 1;
+
+      span {
+        display: inline-block;
+        transition: 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+      }
+    }
+
+    input {
+      position: relative;
+      z-index: 2;
+      width: 100%;
+      background: transparent;
+      border: none;
+      border-bottom: 2px solid #fff;
+      outline: none;
+      padding: 10px 0px;
+      font-size: 18px;
+      color: #fff;
+      transition: border-color 0.3s linear;
+
+      &:valid,
+      &:focus {
+        border-bottom-color: lightblue;
+      }
+
+      &:valid + label span,
+      &:focus + label span {
+        transform: translateY(-30px);
+        color: lightblue;
+      }
+    }
+  }
+
+  p {
+    margin-top: 25px;
+    text-align: center;
+  }
+
+  a {
+    text-decoration: none;
+    color: lightblue;
+  }
+}
+
+.btn {
+  display: block;
+  color: #000 !important;
+  background: lightblue;
+  border-radius: 5px;
+  padding: 15px 35px;
+  text-decoration: none;
+  text-align: center;
+
+  &:active {
+    transform: scale(0.99);
+  }
+}

@@ -1,0 +1,152 @@
+@import url("https://fonts.googleapis.com/css2?family=Mulish:wght@200;300;400;500;600;700;800&display=swap");
+
+$transParams: 0.5s linear;
+
+:root {
+  --main-color: rgb(0, 0, 0);
+  --secondary-color: rgb(240, 240, 240);
+  --main-trans: rgba(0, 0, 0, 0.03);
+}
+
+:root.dark {
+  --main-color: rgb(240, 240, 240);
+  --secondary-color: rgb(0, 0, 0);
+  --main-trans: rgba(240, 240, 240, 0.1);
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: "Mulish", sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-color: var(--secondary-color);
+  transition: background-color $transParams;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.clock {
+  &-wrapper {
+    margin: 40px;
+    width: 240px;
+    height: 240px;
+    position: relative;
+    opacity: 0;
+    animation: clock 1.7s ease forwards;
+    border-radius: 50px;
+    background-color: var(--main-trans);
+    transition: background-color $transParams;
+  }
+
+  &-hand {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    background-color: var(--main-color);
+    transform-origin: bottom center;
+    transition: transform 0.2s ease-in-out, background-color $transParams;
+    border-top-left-radius: 2px;
+    border-top-right-radius: 2px;
+  }
+}
+
+.hand {
+  &-h {
+    width: 4px;
+    height: 30%;
+  }
+
+  &-m {
+    width: 3px;
+    height: 45%;
+  }
+
+  &-s {
+    width: 2.5px;
+    height: 45%;
+    background-color: #e74c3c;
+  }
+
+  &-circle {
+    position: absolute;
+    border: 3px solid #e74c3c;
+    background-color: var(--main-color);
+    border-radius: 50%;
+    width: 10px;
+    height: 10px;
+    z-index: 10;
+    bottom: 50%;
+    left: 50%;
+    transform: translate(-50%, 50%);
+    transition: background-color $transParams;
+  }
+}
+
+.clock-digit {
+  text-transform: uppercase;
+
+  h1 {
+    text-align: center;
+    color: var(--main-color);
+    font-weight: 300;
+    font-size: 60px;
+    transition: color $transParams;
+  }
+
+  p {
+    text-align: center;
+    font-size: 14px;
+    color: rgb(148, 148, 148);
+
+    span {
+      display: inline-block;
+      padding: 2px 6px;
+      background-color: var(--main-color);
+      color: var(--secondary-color);
+      border-radius: 50%;
+      transition: background-color $transParams, color $transParams;
+    }
+  }
+}
+
+.btn-cont {
+  margin-top: 40px;
+}
+
+.btn {
+  background-color: var(--main-color);
+  color: var(--secondary-color);
+  border: none;
+  border-radius: 5px;
+  padding: 8px 16px;
+  cursor: pointer;
+  outline: none;
+  transition: background-color $transParams, color $transParams;
+
+  &:active {
+    transform: scale(0.98);
+  }
+}
+
+@keyframes clock {
+  70% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}

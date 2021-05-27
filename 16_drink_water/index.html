@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <title>Drink water</title>
+  </head>
+  <body>
+    <div class="wrapper">
+      <h1>Drink Water</h1>
+      <div class="goal-header">
+        <h2>Your Goal:</h2>
+        <input id="goal_input" type="text" value="2" autofocus>
+        <h2 id="goal_output"></h2>
+        <button>
+          <i class="fas fa-check goal-conf"></i>
+          <i class="fas fa-exchange-alt goal-change"></i>
+        </button>
+      </div>
+      <div class="water-cont">
+        <div class="water-empty">
+          <span id="goal_remained">How much liters you wanna<br>drink?</span>
+        </div>
+        <div class="water-filled"></div>
+      </div>
+      <p id="glass_cont_header"></p>
+      <div class="glass-cont"></div>
+  </div>
+    <script src="js/script.js"></script>
+  </body>
+</html>

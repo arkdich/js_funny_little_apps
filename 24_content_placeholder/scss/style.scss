@@ -1,0 +1,161 @@
+@import url("https://fonts.googleapis.com/css2?family=Mulish:wght@200;300;400;500;600;700;800&display=swap");
+
+$secondary-color: rgb(129, 129, 129);
+$placeholder-color: rgb(248, 248, 248);
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: "Mulish", sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-color: #ecf0f1;
+}
+
+.item {
+  display: flex;
+  flex-direction: column;
+  max-width: 350px;
+
+  &_style {
+    box-shadow: 0px 0px 4px 4px rgba(0, 0, 0, 0.1);
+    animation: show 0.5s forwards;
+    border-radius: 10px;
+    margin: 15px;
+  }
+
+  &__row {
+    flex: 1;
+    height: 200px;
+    border-radius: 10px;
+    background-color: #fff;
+
+    &_text_padding {
+      padding: 25px;
+      border-top-left-radius: 0px;
+      border-top-right-radius: 0px;
+    }
+
+    &_placeholder {
+      flex: unset;
+      height: 200px;
+      width: 350px;
+      background-color: $placeholder-color;
+    }
+  }
+
+  &__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+  }
+
+  &__header {
+    font-weight: 800;
+  }
+
+  &__text {
+    margin: 10px 0px;
+    color: $secondary-color;
+  }
+
+  &__user-block {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+  }
+
+  &__user-img {
+    width: 20%;
+    height: 20%;
+    border-radius: 50%;
+
+    &_placeholder {
+      height: 60px;
+      background-color: $placeholder-color;
+    }
+  }
+
+  &__user-info {
+    margin-left: 10px;
+  }
+
+  &__user-header {
+    font-weight: 800;
+  }
+
+  &__user-date {
+    color: $secondary-color;
+    margin-top: 5px;
+  }
+}
+
+.row-placeholder {
+  height: 15px;
+  border-radius: 5px;
+  background-color: $placeholder-color;
+
+  &_w_100 {
+    width: 100px;
+  }
+}
+
+.m-b-35 {
+  margin-bottom: 35px;
+}
+
+.m-tb-10 {
+  margin: 10px 0px;
+}
+
+.bg-anim {
+  background: linear-gradient(
+    90deg,
+    $placeholder-color 5%,
+    rgb(241, 241, 241) 15%,
+    rgb(241, 241, 241) 25%,
+    $placeholder-color 35%
+  );
+  background-size: 200% 100%;
+  animation: item-load 1.5s linear infinite;
+}
+
+@keyframes item-load {
+  0% {
+    background-position: 50% 0;
+  }
+  100% {
+    background-position: -150% 0;
+  }
+}
+
+@keyframes show {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@media (max-width: 310px) {
+  .item {
+    font-size: 0.8rem;
+
+    &__row {
+      &_text_padding {
+        padding: 15px;
+      }
+    }
+  }
+}
